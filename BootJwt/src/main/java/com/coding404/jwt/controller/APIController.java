@@ -59,10 +59,21 @@ public class APIController {
 		return "<h3>헬로</h3>";
 	}
 	
+	// 토큰기반으로 사용자 요청정보 반환기능 
+	@PostMapping("/api/v1/getInfo")
+	public ResponseEntity<Object> getInfo(HttpServletRequest request) {
+
+		System.out.println("토큰이 있으면 호출(DB연결 처리해야됨)");
+		
+		return new ResponseEntity<>("데이터", HttpStatus.OK);
+		
+	}
 	
-	
-	
-	
+	// 회원가입 - 토큰필요 없음
+	@PostMapping("/join")
+	public ResponseEntity<Object> join() {
+		return new ResponseEntity<>("가입성공", HttpStatus.OK);
+	}
 	
 	
 	
